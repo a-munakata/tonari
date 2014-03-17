@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Tonari::VERSION
   spec.authors       = ["mosson"]
   spec.email         = ["cucation@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{A wrapper for CREATIVE SURVEY API 1.0}
+  spec.summary       = %q{A wrapper for CREATIVE SURVEY API 1.0}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -18,6 +18,10 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.add_dependency('httparty')
+  spec.add_dependency('multi_json', '>= 1.3.4')
+
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec", ">= 2.14.1"
 end

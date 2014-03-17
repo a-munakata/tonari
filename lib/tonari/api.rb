@@ -1,0 +1,42 @@
+# encoding: utf-8
+
+module Tonari
+  class API
+    include HTTParty
+    attr_accessor :auth_token, :default_params, :end_point
+    
+    def self.api_version
+      1
+    end
+    
+    def self.end_point
+      "https://creativesurvey.com/api/#{self.api_version}"
+    end
+    
+    def initialize(email, password, default_params={})
+      @end_point       = default_params.delete(:end_point) || self.class.end_point
+      @auth_token      = self.get_auth_token(email, password)
+      @defualt_params  = default_params.merge(auth_token: @auth_token)
+    end
+    
+    def call(method, action, params={})
+      response = self.class.send( method, "#{@end_point}#{action}", (@default_params||{}).merge(params) )
+      
+      case response.code
+        when 200
+          response
+        else
+          raise response.message
+      end
+    end
+    
+    def get_auth_token(email, password)
+      response = call(:post, "/users/sign_in", body: {user_login: { email: email, password: password } })
+      response["auth_token"]
+    end
+    
+    def surveys
+      call(:get, "/surveys")
+    end
+  end
+end
