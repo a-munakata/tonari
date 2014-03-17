@@ -19,6 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency('httparty')
+  spec.add_dependency('inflection')
   spec.add_dependency('multi_json', '>= 1.3.4')
   spec.add_dependency('hash-deep-merge', '~> 0.1.1')
 

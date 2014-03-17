@@ -3,6 +3,7 @@
 module Tonari
   class API
     include HTTParty
+
     attr_accessor :auth_token, :default_params, :end_point
 
     def self.api_version
@@ -34,10 +35,6 @@ module Tonari
     def get_auth_token(email, password)
       response = call(:post, "/users/sign_in", body: {user_login: { email: email, password: password } })
       response["auth_token"]
-    end
-    
-    def surveys
-      call(:get, "/surveys")
     end
   end
 end
