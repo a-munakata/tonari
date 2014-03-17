@@ -1,6 +1,8 @@
 # Tonari
 
-This is experimental version yet.
+This is [creativesurvey.com](https://creativesurvey.com) API Client Library.
+
+Also, **Experimental** version yet.
 
 ## Installation
 
