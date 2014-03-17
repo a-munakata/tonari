@@ -6,7 +6,7 @@ module Tonari
     attr_accessor :auth_token, :default_params, :end_point
 
     def self.api_version
-      1
+      "V1"
     end
 
     def self.end_point
