@@ -6,6 +6,12 @@ This is [creativesurvey.com](https://creativesurvey.com) API Client Library.
 
 **Experimental** version yet. 
 
+---
+
+開発版です。
+
+まだ使用しないでください。
+
 ## Installation
 
 Add this line to your application's Gemfile:
